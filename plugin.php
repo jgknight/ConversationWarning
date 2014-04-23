@@ -6,7 +6,7 @@ if (!defined("IN_ESOTALK")) exit;
 ET::$pluginInfo["ConversationWarning"] = array(
 	"name" => "Conversation Warning",
 	"description" => "Define the rules of conversation before replying.",
-	"version" => "1.0.0",
+	"version" => "1.0.1",
 	"author" => "Tristan van Bokkem",
 	"authorEmail" => "tristanvanbokkem@gmail.com",
 	"authorURL" => "http://www.bitcoinclub.nl",
