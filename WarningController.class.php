@@ -50,4 +50,14 @@ class WarningController extends ETController {
 		$this->responseType = RESPONSE_TYPE_VIEW;
 		$this->render($this->plugin()->getView("add"));
 	}
+
+	public function remove($conversationId)
+	{
+		// Remove the warning.
+		$model = ET::getInstance("warningModel");
+		$result = $model->update($conversationId);
+		$warning = $result->result();
+
+		return $warning;
+	}
 }
