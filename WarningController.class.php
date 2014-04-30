@@ -51,7 +51,7 @@ class WarningController extends ETController {
 		$this->render($this->plugin()->view("add"));
 	}
 
-	public function remove($conversationId)
+	public function action_remove($conversationId)
 	{
 		// Remove the warning.
 		$model = ET::getInstance("warningModel");
