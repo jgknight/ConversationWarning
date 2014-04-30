@@ -15,7 +15,7 @@ class WarningController extends ETController {
 		return ET::$plugins["ConversationWarning"];
 	}
 
-	public function index($conversationId)
+	public function action_index($conversationId)
 	{
 		// Get the existing warning.
 		$model = ET::getInstance("warningModel");
@@ -48,7 +48,7 @@ class WarningController extends ETController {
 
 		$this->data("form", $form);
 		$this->responseType = RESPONSE_TYPE_VIEW;
-		$this->render($this->plugin()->getView("add"));
+		$this->render($this->plugin()->view("add"));
 	}
 
 	public function remove($conversationId)

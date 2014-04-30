@@ -6,7 +6,7 @@ if (!defined("IN_ESOTALK")) exit;
 ET::$pluginInfo["ConversationWarning"] = array(
 	"name" => "Conversation Warning",
 	"description" => "Define the rules of conversation before replying.",
-	"version" => "1.0.1",
+	"version" => "1.1.0",
 	"author" => "Tristan van Bokkem",
 	"authorEmail" => "tristanvanbokkem@gmail.com",
 	"authorURL" => "http://www.bitcoinclub.nl",
@@ -42,8 +42,8 @@ class ETPlugin_ConversationWarning extends ETPlugin {
 	// Add the JavaScript and style sheet to <HEAD>.
 	public function handler_conversationController_renderBefore($sender)
 	{
-		$sender->addCSSFile($this->getResource("warning.css"));
-		$sender->addJSFile($this->getResource("warning.js"));
+		$sender->addCSSFile($this->resource("warning.css"));
+		$sender->addJSFile($this->resource("warning.js"));
 	}
 
 	// Add the warning control button before the sitcky control button to the conversation controls.
@@ -103,5 +103,12 @@ class ETPlugin_ConversationWarning extends ETPlugin {
 			// Before editButtons div.
 			addToArray($formatted["footer"], $view, 0);
 		}
+	}
+
+	public function uninstall()
+	{
+		$structure = ET::$database->structure();
+		$structure->table("conversation")->drop("warning");
+		return true;
 	}
 }
