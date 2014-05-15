@@ -39,11 +39,18 @@ class WarningController extends ETController {
 			$model = $this->model();
 			$model->update($conversationId, $warning);
 
-			// If there were errors, pass them on to the form.
-			if ($model->errorCount()) $form->errors($model->errors());
+			if ($model->errorCount()) {
 
-			// Otherwise, redirect back to the conversation page.
-			else $this->redirect(URL("conversation/".$conversationId));
+				// If there were errors, pass them on to the form.
+				$form->errors($model->errors());
+			} else {
+
+				// Otherwise, send the admin a success message.
+				ET::$controller->message(T("Warning successfully added."), "success autoDismiss");
+
+				// And redirect back to the conversation page.
+				$this->redirect(URL("conversation/".$conversationId));
+			}
 		}
 
 		$this->data("form", $form);

@@ -17,6 +17,7 @@ function removeWarning() {
 	    type: "post",
 	    success: function(data) {
 	        $(".modbreak").remove();
+			ETMessages.showMessage(T("Warning successfully removed."), {className: "success autoDismiss"});
 		}
 	});
 };

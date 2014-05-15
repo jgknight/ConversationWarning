@@ -44,6 +44,7 @@ class ETPlugin_ConversationWarning extends ETPlugin {
 	{
 		$sender->addCSSFile($this->resource("warning.css"));
 		$sender->addJSFile($this->resource("warning.js"));
+		$sender->addJSLanguage("Warning successfully removed.");
 	}
 
 	// Add the warning control button before the sitcky control button to the conversation controls.
