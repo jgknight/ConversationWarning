@@ -53,6 +53,9 @@ class WarningController extends ETController {
 
 	public function action_remove($conversationId)
 	{
+		// We can't do this if we're not admin.
+		if (!ET::$session->isAdmin() or !$this->validateToken()) return false;
+
 		// Remove the warning.
 		$model = ET::getInstance("warningModel");
 		$result = $model->update($conversationId);
