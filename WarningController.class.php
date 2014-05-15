@@ -5,14 +5,14 @@ if (!defined("IN_ESOTALK")) exit;
 
 class WarningController extends ETController {
 
-	protected function model()
-	{
-		return ET::getInstance("warningModel");
-	}
-
 	protected function plugin()
 	{
 		return ET::$plugins["ConversationWarning"];
+	}
+
+	protected function model()
+	{
+		return ET::getInstance("warningModel");
 	}
 
 	public function action_index($conversationId)
