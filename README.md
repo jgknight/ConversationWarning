@@ -21,20 +21,12 @@ chown -R apache:apache ConversationWarning/
 
 ### Translation
 
-Add the following definitions to your translation file (or create a seperate definitions.ConversationWarning.php file):
+Create `definitions.ConversationWarning.php` in your language pack with the following definitions:
 
 ```
 $definitions["Add a Converstation Warning"] = "Add a Converstation Warning";
 $definitions["Define the rules of a Conversation"] = "Define the rules of a Conversation";
 $definitions["Edit Warning"] = "Edit Warning";
 $definitions["Remove Warning"] = "Remove Warning";
-```
-
-The default translation for "Warning" should be editted as well, edit `definitions.php` and change:
-```
-$definitions["Warning"] = "Uh oh, something's not right!";
-```
-into:
-```
 $definitions["Warning"] = "Warning";
 ```
