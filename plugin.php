@@ -109,7 +109,7 @@ class ETPlugin_ConversationWarning extends ETPlugin {
 	public function uninstall()
 	{
 		$structure = ET::$database->structure();
-		$structure->table("conversation")->drop("warning");
+		$structure->table("conversation")->dropColumn("warning");
 		return true;
 	}
 }
